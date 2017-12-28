@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jone.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<!--   引入jQuery库 -->
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+
+<script type="text/javascript">
+	$(function() {
+
+		//focus():获取文本框的焦点
+		$("input:text").focus(function() {
+			if ($(this).val() == "请输入用户名"){
+				$(this).val("");
+			}
+		});
+	
+		//设置按钮只能点击一次
+		$("input:button").click(function() {
+			$(this).attr("disabled","true");
+		});
+		
+		
+	})
+</script>
+</head>
+<body>
+	<input type="text" value="请输入用户名">
+	<input type="button" value="提交" >
+</body>
+</html>

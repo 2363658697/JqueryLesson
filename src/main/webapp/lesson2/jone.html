@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jone.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<!--   引入jQuery库 -->
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+
+<script type="text/javascript">
+	
+
+	$(function() {
+		//通过id选择器获取jquery对象
+		var tx=$("#tx");
+		//调用jquery中的方法获取文本框的值
+		alert(tx.val());
+	})
+
+</script>
+</head>
+
+
+<!--    美元符($),下划线(_)可以作为类名和方法名，其他特殊字符都不行
+
+		jquery中不能定义 美元符($)的方法 --    $(){}  ，自定义的美元符方法会覆盖jQuery中的$
+		
+		
+		$是jQuery的入口，它本身是一个函数，可以传入不同类型的参数，字符串，匿名函数
+		
+		//传入的函数==window.onload
+		$(function(){
+			alert("ddd");
+		})
+	      					
+	   	两种方式效果等同 ，后者不推荐使用(过期,底版本jquery使用)			   											
+	   	$(function() {          		  
+			//匿名函数内可以在dom元素初始化完成后，实现自定义的代码逻辑													
+		})							
+					 						  
+	  	$(document).ready(function() {
+			alert("ddd");													
+		})										 						 
+			
+		dom对象（js中）：标签对象（Button,Attr等)，Window,Document对象
+				
+		jQuery 对象：
+			就是通过 jQuery 包装 DOM 对象后产生的对象(数组)
+			是 jQuery 独有的
+  			无法使用 DOM 对象的任何方法, 同样 DOM 对象也不能使用 jQuery 里的任何方法
+		建议约定：如果获取的是 jQuery 对象, 那么要在变量前面加上 $. 
+	     
+	   css,jquery选择器：找到满足选择器条件的dom元素对应的jquery对象  ---  $("选择器")
+	   
+	   
+	   <input type="text" id="tx" value="44">
+	   
+	   $(function() {
+			//通过id选择器获取jquery对象
+			var tx=$("#tx");
+			//调用jquery中的方法获取文本框的值
+			alert(tx.val());
+		})
+	   
+	   
+	   jquery优化：尽量使用id选择器，通过id选择器获取的jquery对象唯一
+ -->
+
+<body>
+	<input type="text" id="tx" value="44">
+	
+</body>
+</html>

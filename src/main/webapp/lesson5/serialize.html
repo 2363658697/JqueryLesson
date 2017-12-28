@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jone.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<!--   引入jQuery库 -->
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$(":button").click(function() {
+			/* var uname=$("#uname").val();
+			var upassword=$("#upassword").val();
+			var repassword=$("#repassword").val();
+			var ck=$(".ck").val();*/
+			
+			//var param="uname="+uname+"&upasswored="+upassword+"&repassword="+repassword+"&ck="+ck; 
+			
+			//serialize():一次获取表单所有的数据
+			var paramStr=$("form").serialize();
+			alert(paramStr);
+		})
+	})
+</script>
+</head>
+<body>
+	<form>
+		用户名：<input type="text" name="uname" value="" id="uname" /> 
+		密码：<input type="password" name="upassword" value="" id="upassword" />
+		确认密码：<input type="password" name="repassword" value="" id="repassword" /> 
+		兴趣： 
+		<input type="checkbox" name="ck" value="0" class="ck" />跑步 
+		<input type="checkbox" name="ck" value="1" class="ck" />游泳  
+		<input type="button" value="提交" />
+	</form>
+</body>
+</html>

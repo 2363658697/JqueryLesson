@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jone.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<!--   引入jQuery库 -->
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+<style type="text/css">
+.t {
+	color: red;
+}
+</style>
+
+
+<script type="text/javascript">
+
+	function add(){
+		//remove():删除标签
+		$("#data").remove();
+		//append:插入标签
+		//prepend:要插入到目标元素内部前端的内容
+		$("table").append("<tr id='data'><td>a</td><td>boy</td><td>12</td></tr>");
+	}
+</script>
+</head>
+
+
+
+<body>
+	<table>
+		<tr name="thd">
+			<th>用户名</th>
+			<th>性别</th>
+			<th>年龄</th>
+		</tr>
+	</table>
+	<input type="button" onclick="add()" value="添加行">
+</body>
+</html>

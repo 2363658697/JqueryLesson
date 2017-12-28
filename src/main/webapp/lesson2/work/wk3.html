@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>wk2.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
+<script type="text/javascript">
+	$(function() {		  
+		  $("input:last").click(function(){
+		  		alert($("input:checked").length);		  
+		  })  
+	})
+</script>
+
+</head>
+
+<body>
+	<input type="checkbox" value="a" />a
+	<input type="checkbox" value="b" />b
+	<input type="checkbox" value="c" />c
+	<input type="checkbox" value="d" />d
+	<input type="button" value="你选择的个数" />
+</body>
+</html>

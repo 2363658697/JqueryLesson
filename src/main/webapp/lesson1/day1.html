@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day1.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<script type="text/javascript">
+	window.onload = function() {
+		var tr = document.getElementsByTagName("tr");
+		for ( var i = 1; i < tr.length; i++) {
+			if (i % 2 == 0) {
+				tr[i].style.color = 'green';
+			} else {
+				tr[i].style.color = 'red';
+			}
+		}
+	};
+
+	var selects = document.getElementsByName("inter");
+
+	var select = document.getElementById("one");
+	var reselect = document.getElementById("reone");
+
+	var checkAll = false;
+	function allcheck() {
+		checkAll = !checkAll;
+/* 		let
+		inputs = document.getElementsByName('checkbox') */
+		for ( var i = 0; i < selects.length; i++) {
+			selects[i].checked = checkAll;
+		}
+	}
+
+	/**  
+	 * 全选  
+	 */
+	function selectAll() {
+
+		for ( var i = 0; i < selects.length; i++) {
+			selects[i].checked = true;
+		}
+
+	}
+
+	/**  
+	 * 反选  
+	 */
+	function inverse() {
+
+		for ( var i = 0; i < selects.length; i++) {
+
+			if (selects[i].checked) {
+				selects[i].checked = false;
+			} else {
+				selects[i].checked = true;
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body>
+	<table>
+		<tr>
+			<th>用户名</th>
+			<th>性别</th>
+			<th>年龄</th>
+		</tr>
+		<tr style="color: red">
+			<td>a</td>
+			<td>boy</td>
+			<td>12</td>
+		</tr>
+
+		<tr>
+			<td>b</td>
+			<td>girl</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>c</td>
+			<td>boy</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>d</td>
+			<td>girl</td>
+			<td>7</td>
+		</tr>
+	</table>
+	<input type="checkbox" id="one" onclick="selectAll()">全选
+	<br>
+	<input type="checkbox" id="reone" onclick="inverse()">反选
+	<br>
+	<input type="checkbox" name="inter">排球
+	<input type="checkbox" name="inter">足球
+	<input type="checkbox" name="inter">篮球
+
+</body>
+</html>

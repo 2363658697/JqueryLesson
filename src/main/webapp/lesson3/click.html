@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jone.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<!--   引入jQuery库 -->
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+
+<script type="text/javascript">
+	
+	$(function() {
+		//绑定事件： click()和bind()   可以多次绑定
+		$("input:button:first").click(function(){
+			alert("click添加点击事件");
+		});	
+		
+		$("input:button:first").bind("click",function(){
+			alert("bind添加点击事件");
+		});		
+		
+		//去除事件：unbind()	
+		$("input:button:last").click(function(){
+			alert("unbind清除点击事件");
+			$("input:button:first").unbind("click");
+		});	
+		
+		//one():只有第一次点击时才会生效    this:是个dom元素  通过$(this)转成jquery对象
+		$("p").one("click", function(){
+		  alert("helloword");
+		});	
+	})		
+</script>
+</head>
+<body>
+	<input type="button"  value="点击">
+	<input type="button"  value="清除">
+	<p>该段落第一次被点击时会弹出“helloword”</p>
+</body>
+</html>

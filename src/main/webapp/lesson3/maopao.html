@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>事件冒泡</title>
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//为span元素绑定click事件
+		$('span').bind('click', function() {
+			var txt = $('#info').html() + '<p>内层span元素被点击</p>';
+			$('#info').html(txt);
+			event.stopPropagation(); //停止事件冒泡
+		});
+		//为div元素绑定click事件
+		$('#content').bind('click', function() {
+			var txt = $('#info').html() + '<p>外层div元素被点击</p>';
+			$('#info').html(txt);
+			return false;//停止事件冒泡
+		});
+		//为body元素绑定click事件
+		$('body').bind('click', function() {
+			var txt = $('#info').html() + '<p>body元素被点击</p>';
+			$('#info').html(txt);
+		});
+	});
+
+	/*当你单击‘内层span元素'时，即触发<span>元素的click事件时，会输出3条记录
+	 即：
+	 内层span元素被点击
+	 外层div元素被点击
+	 body元素被点击
+	 这就是事件冒泡引起的 */
+	 
+	 /* 阻止冒泡事件：click事件中添加    return false  或   event.stopPropagation(); */
+	 
+</script>
+</head>
+<body>
+	<div id="content">
+		外层div元素 <span>内层span元素</span>
+	</div>
+	<div id="info"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>wk2.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
+
+<script type="text/javascript">
+	$(function() {		  
+		  $("input:first").focus(function(){
+		  		if($(this).val()=="请输入邮箱地址")
+		  		$(this).val("");	  
+		  });  
+		  $("input:first").blur(function(){
+		  		if($(this).val()=="")
+		  		$(this).val("请输入邮箱地址");	  
+		  });  
+	/* 	  $("input").eq(1).focus(function(){
+		  		$(this).val("");	  
+		  });  
+		  $("input").eq(1).blur(function(){
+		  		$(this).val("请输入邮箱密码");	  
+		  });   */
+	})
+</script>
+
+</head>
+
+<body>
+	<input type="text" value="请输入邮箱地址"/><br/>
+	<input type="text" value="请输入邮箱密码"/><br/>
+	<input type="button" value="登陆" />
+</body>
+</html>

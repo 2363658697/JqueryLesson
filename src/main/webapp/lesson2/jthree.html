@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jone.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<!--   引入jQuery库 -->
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+<style type="text/css">
+	.t{
+		color: red;
+	}
+
+</style>
+
+
+<script type="text/javascript">
+	
+
+	$(function() {
+		
+
+		//atrr:修改dom对象的属性
+		//$("#tx").attr("type","password");
+		
+		//removeAttr：删除dom对象的属性
+		//$("#tx").attr("type","");	
+		//$("#tx").removeAttr("type");		
+		
+		//addClass:给dom元素添加内部样式 == class="t"
+		//$("#tx").addClass("t");
+		
+		//removeClass:删除dom元素内部样式
+		//$("#tx").removeClass("t");
+		
+		//css("键","值"):给dom元素添加行内样式  == style=""
+		//$("#tx").css("color","red");
+		
+		//val():获取dom元素的值或修改
+		//$("#tx").val("666");
+		
+		//html(),text()==	innerHTML（包括标签的文本内容 ），innerText（不包括标签的文本内容）
+		//html()中添加标签可以解析，text()中添加标签会当做文本
+		$("#d").text("<input/>");
+	})
+
+</script>
+</head>
+
+
+<!--   jquery中的方法：传入一个参数是取值，传入两个是赋值
+
+ -->
+
+<body>
+	<input type="text" id="tx"  value="44" >
+	<div id="d"> dd </div>
+</body>
+</html>

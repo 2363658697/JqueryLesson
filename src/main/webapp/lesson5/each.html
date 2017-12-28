@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>each.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		
+		//去除空格
+		var string="  d ";
+		//alert(string.trim().length);
+		//alert($.trim(string).length);
+
+		//this在each中是dom对象
+		
+		//回调函数不加参数，使用this
+		$("p").each(function() {
+			$(this).click(function() {
+				alert($(this).html());
+			});
+		});
+		
+		//遍历一组dom元素：第一个为对象的成员或数组的索引，第二个为对应变量或内容
+		$("div").each(function(index, obj) {
+			//alert(index+"----"+$(obj).text());
+		});
+		
+		//遍历数组，回调函数第一个参数是下标，第二个参数是数组元素
+		var arr=[0,1,2];
+		$.each( arr, function(i, n){
+		 // alert(i + ": " + n );
+		});
+
+		//遍历单个对象，回调函数第一个参数是键，第二个参数是值
+		var obj={ name: "John", lang: "JS" };
+		$.each(obj, function(index, n) {
+			//alert( index+"---" + n);
+		});
+		
+		//遍历对象数组，回调函数第一个参数是数组下标，第二个参数是单个对象
+		var obj=[{ name: "a", age: 11 },{ name: "b", age: 12}];
+		$.each(obj, function(index, n) {
+			//alert( index+"---" + n.name+": "+n.age);
+		});
+
+	})
+</script>
+</head>
+
+<body>
+	<p>段落1</p>
+	<p>段落1</p>
+	<div>div1</div>
+	<div>div2</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jone.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<!--   引入jQuery库 -->
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+
+<script type="text/javascript">
+	$(function() {
+		/* 
+		参数：slow,fast,毫秒(1000)
+		
+		显示隐藏:show(),hide()
+		向上向下滑动：slideDown(),slideUp()
+		淡入淡出：fadeIn(),fadeOut() */
+		$(":button:first").click(function() {
+			//$("div").show();
+			//显示和隐藏：toggle()
+			//$("div").toggle();
+			//$("div").slideDown("slow");
+			$("div").fadeIn("slow");
+		});
+		$(":button:last").click(function() {
+			//$("div").hide();
+			//$("div").slideUp("slow");
+			$("div").fadeOut("slow");
+		});
+
+	})
+</script>
+</head>
+<body>
+	<div style="display: block;">
+		<img alt="" src="a.jpg">
+	</div>
+	<input type="button" value="显示">
+	<input type="button" value="隐藏">
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>on.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<!--   引入jQuery库 -->
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+
+
+<script type="text/javascript">
+	$(function() {
+		//非委派：通过选择器选中的标签  后续添加同样的标签  不会绑定该事件
+		/* $(".bt").bind("click",function(){
+			alert("点击了按钮");
+		});	 */
+
+		//委派
+		$(document).on("click", ".bt", function() {
+			alert("点击了按钮");
+		});
+
+		$("input:button:last").bind("click", function() {
+			$(document.body).append("<input type='button' value='新增按钮' class='bt'>");
+		});
+	})
+</script>
+</head>
+<body>
+	<input type="button" value="按钮1" class="bt">
+	<input type="button" value="按钮2" class="bt">
+	<input type="button" value="点击增加按钮">
+</body>
+</html>
